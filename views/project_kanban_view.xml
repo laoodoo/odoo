@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+	<record model="ir.ui.view" id="project_kanban_view_modern">
+            <field name="name">project.kanban.view.modern</field>
+            <field name="inherit_id" ref="project.view_project_kanban"/>
+            <field name="model">project.project</field>
+            <field name="arch" type="xml">	
+                <xpath expr='//kanban/templates/t/div/div/div/div/div/span[2]' position="after">
+                    <div style="color: #BABABA; font-size: 12px">
+			<div class="fa fa-user"> <field name="user_id" /> </div><br/>
+			<div class="fa fa-phone"> <field name="phone_manager" /> </div><br/>
+			<hr/>
+			<div class="fa fa-user"> <field name="partner_id" /></div><br/>
+			<div class="fa fa-phone"> <field name="phone_cus" /></div><br/>
+			<div class="fa fa-envelope"> <field name="email_cus" /></div><br/>
+			<div class="fa fa-map-marker"> <field name="city_cus" /></div>
+		    </div>
+		</xpath>
+
+
+		<xpath expr='//kanban/templates/t/div/div/div/div/div/span[2]' position="attributes">
+                    	<attribute name="invisible">1</attribute>		    
+		</xpath>
+            </field>
+	</record>
+    </data>
+</odoo>	
